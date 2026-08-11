@@ -21,4 +21,21 @@ export class InventoryPage {
   async getPageTitle() {
     return await this.pageTitle.textContent();
   }
+
+  async getProductsList(){
+    let productsList = [];
+
+    for (const item of await this.products.all()){
+      let name = await item.locator('[data-test="inventory-item-name"]').textContent();
+      let price = await item.locator('[data-test="inventory-item-price"]')
+        .textContent();
+
+      price = Number(price.slice(1));
+
+      productsList.push({name, price})
+    }
+
+    return productsList;
+  }
+ 
 }
