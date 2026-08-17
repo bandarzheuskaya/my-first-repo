@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test'
 
-test.describe('Авторизация на SauseDemo', () => {
+test.describe('Авторизация на SauseDemo @ui', () => {
 
     test('Успешная авторизация', async ({page}) => {
         await page.goto('https://www.saucedemo.com/');
