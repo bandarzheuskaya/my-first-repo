@@ -2,20 +2,20 @@ import { test, expect } from "@playwright/test";
 
 test.describe.configure({ mode: "serial" });
 
-test.describe("Тестирование API Restful-booker @api", () => {
+test.describe("Тестирование API Restful-booker", { tag: "@api" }, () => {
   const baseURL = "https://restful-booker.herokuapp.com";
 
   const bookingData = {
-      firstname: "Amala",
-      lastname: "Ratna",
-      totalprice: 546,
-      depositpaid: true,
-      bookingdates: {
-        checkin: "2026-09-01",
-        checkout: "2026-09-10",
-      },
-      additionalneeds: "Breakfast",
-    };
+    firstname: "Amala",
+    lastname: "Ratna",
+    totalprice: 546,
+    depositpaid: true,
+    bookingdates: {
+      checkin: "2026-09-01",
+      checkout: "2026-09-10",
+    },
+    additionalneeds: "Breakfast",
+  };
 
   let bookingId;
   let authToken;
